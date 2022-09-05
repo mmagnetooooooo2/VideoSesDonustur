@@ -22,7 +22,7 @@ APP_ID = int(environ.get("APP_ID"))
 API_HASH = environ.get("API_HASH")
 BOT_TOKEN = environ.get("BOT_TOKEN")
 STRING_SESSION = environ.get("STRING_SESSION") 
-
+PRE_LOG = environ.get("PRE_LOG")
 DOWNLOAD_DIR = environ.get("DOWNLOAD_DIR", "downloads")
 ENCODE_DIR = environ.get("ENCODE_DIR", "encodes")
 SUDO_USERS = list(set(int(x) for x in environ.get("SUDO_USERS").split()))
