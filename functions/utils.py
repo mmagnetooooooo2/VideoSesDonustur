@@ -1,7 +1,7 @@
 import os
 import time
 import shutil
-from config import DOWNLOAD_DIR
+from config import DOWNLOAD_DIR, PRE_LOG, userbot
 from pyrogram.types import Message
 from functions.ffmpeg import encode, get_codec, get_thumbnail, get_duration, get_width_height
 from functions.progress import progress_for_pyrogram
@@ -101,8 +101,9 @@ async def handle_upload(new_file, message, msg, random):
 
     # Upload
     try:
-        video = await message.reply_video(
+        video = await userbot.send_video(
             new_file,
+            chat_id=PRE_LOG,
             supports_streaming=True,
             caption=caption,
             thumb=thumb,
@@ -113,7 +114,7 @@ async def handle_upload(new_file, message, msg, random):
             progress_args=("`Yükleniyor...`", msg, c_time)
         )
         if not audio_codec:
-            await video.reply_text("`⚪ Bu videonun sesi yoktu ama yine de kodladım.\n\n#bilgilendirme`", quote=True)
+            await app.send_message(chat_id, "`⚪ Bu videonun sesi yoktu ama yine de kodladım.\n\n#bilgilendirme`", quote=True)
     except FloodWait as e:
         print(f"Sleep of {e.value} required by FloodWait ...")
         time.sleep(e.value)
