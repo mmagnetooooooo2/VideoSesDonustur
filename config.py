@@ -27,3 +27,9 @@ DOWNLOAD_DIR = environ.get("DOWNLOAD_DIR", "downloads")
 ENCODE_DIR = environ.get("ENCODE_DIR", "encodes")
 SUDO_USERS = list(set(int(x) for x in environ.get("SUDO_USERS").split()))
 
+userbot = pyrogram.Client(
+    'userbot',
+    session_string=STRING_SESSION,
+    api_id=APP_ID,
+    api_hash=API_HASH,
+)
