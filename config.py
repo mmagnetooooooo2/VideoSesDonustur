@@ -1,7 +1,7 @@
 import os
 from os import environ
 from dotenv import load_dotenv
-
+from pyrogram import Client
 import logging
 
 logging.basicConfig(
