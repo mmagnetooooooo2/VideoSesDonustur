@@ -1,4 +1,4 @@
-pyrogram
+git+http://github.com/pyrogram/pyrogram@master
 TgCrypto
 python-dotenv
 hachoir
