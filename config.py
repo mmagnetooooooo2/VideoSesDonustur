@@ -21,6 +21,7 @@ quee = []
 APP_ID = int(environ.get("APP_ID"))
 API_HASH = environ.get("API_HASH")
 BOT_TOKEN = environ.get("BOT_TOKEN")
+STRING_SESSION = environ.get("STRING_SESSION") 
 
 DOWNLOAD_DIR = environ.get("DOWNLOAD_DIR", "downloads")
 ENCODE_DIR = environ.get("ENCODE_DIR", "encodes")
